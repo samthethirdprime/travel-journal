@@ -1,4 +1,4 @@
-
+import mark from "../images/marker.png"
 export default function Entry({img,country,googleMapLink, title, dates, text}) {
     return (
         <article className="journal-entry">
@@ -13,7 +13,7 @@ export default function Entry({img,country,googleMapLink, title, dates, text}) {
             <div className="info-container">
                 <img
                     className="marker"
-                    src="../images/marker.png"
+                    src={mark}
                     alt="map marker icon"
                 />
 

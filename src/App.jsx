@@ -39,7 +39,7 @@ item.tolowerCase().trim().includes(search.tolowerCase()))
 <input value={search}
 placeholder="enter city name"
 type="text"
-onChange= setSearch(event.target.vakue)
+onChange= setSearch(event.target.value)
 
 />
     <main className='container'>

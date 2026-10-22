@@ -37,12 +37,7 @@ function App() {
   return(
     <>
     <Header />
-<input value={search}
-placeholder="enter city name"
-type="text"
-onChange= setSearch(event.target.value)
 
-/>
     <main className='container'>
       <input
       className='viewed'

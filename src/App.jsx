@@ -1,7 +1,7 @@
 import Header from '../components/Header.jsx'
 import Entry from '../components/Entry.jsx'
 import data from '../data.js'
-
+import { useState} from 'react-dom/client'
 
 
 /**
@@ -19,7 +19,12 @@ import data from '../data.js'
 
 function App() {
 
-  const myArray = data.map(entry=>
+const [search, setSearch] = useState("")
+
+const filteredData = data.filter(item=>
+item.tolowerCase().trim().includes(search.tolowerCase()))
+
+  const myArray = filteredData.map(entry=>
     <Entry
     key={entry.id}
     //spread the entry object as prop
@@ -31,6 +36,12 @@ function App() {
   return(
     <>
     <Header />
+<input value={search}
+placeholder="enter city name"
+type="text"
+onChange= setSearch(event.target.vakue)
+
+/>
     <main className='container'>
       {myArray}
     </main>

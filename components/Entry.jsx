@@ -1,5 +1,5 @@
 import mark from "../images/marker.png"
-export default function Entry({img,country,googleMapLink, title, dates, text}) {
+export default function Entry({img,country,googleMapsLink, title, dates, text}) {
     return (
         <article className="journal-entry">
             <div className="main-image-container">
@@ -20,7 +20,7 @@ export default function Entry({img,country,googleMapLink, title, dates, text}) {
                 <span className="country">{country}</span>
 
                 <a
-                    href={googleMapLink}
+                    href={googleMapsLink}
                     target="_blank"
                     rel="noopener noreferrer"
                 >

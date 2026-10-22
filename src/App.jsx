@@ -1,6 +1,7 @@
 import Header from '../components/Header.jsx'
 import Entry from '../components/Entry.jsx'
 import data from '../data.js'
+import { useState} from 'react'
 
 
 
@@ -19,7 +20,13 @@ import data from '../data.js'
 
 function App() {
 
-  const myArray = data.map(entry=>
+  const[searchTerm, setSearchItem] = useState('')
+
+  const filteredData = data.filter(contact=>
+    contact.country.toLowerCase().trim().includes(searchTerm.toLocaleLowerCase().trim())
+  )
+
+  const myArray = filteredData.map(entry=>
     <Entry
     key={entry.id}
     //spread the entry object as prop
@@ -32,6 +39,13 @@ function App() {
     <>
     <Header />
     <main className='container'>
+      <input
+      className='viewed'
+      type="text"
+      placeholder='search destination'
+      value={searchTerm}
+      onChange={(event) => setSearchItem(event.target.value)}
+      ></input>
       {myArray}
     </main>
 

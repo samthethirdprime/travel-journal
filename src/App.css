@@ -1,3 +1,13 @@
+
+
+.viewed::placeholder {
+    color: #999187;
+}
+
+.viewed:focus {
+    border-color: #6b5b95;
+    box-shadow: 0 0 0 3px rgba(107, 91, 149, 0.12);
+}
 .counter {
   font-size: 16px;
   padding: 5px 10px;

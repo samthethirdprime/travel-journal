@@ -1,8 +1,7 @@
 import Header from '../components/Header.jsx'
 import Entry from '../components/Entry.jsx'
 import data from '../data.js'
-import { useState} from 'react'
-
+import { useState } from 'react'
 
 
 /**
@@ -20,9 +19,9 @@ import { useState} from 'react'
 
 function App() {
 
-  const[searchTerm, setSearchItem] = useState('')
+  const [searchTerm, setSearchItem] = useState('')
 
-  const filteredData = data.filter(contact=>
+  const filteredData = data.filter(contact =>
     contact.country.toLowerCase().trim().includes(searchTerm.toLocaleLowerCase().trim())
   )
 
@@ -38,6 +37,12 @@ function App() {
   return(
     <>
     <Header />
+<input value={search}
+placeholder="enter city name"
+type="text"
+onChange= setSearch(event.target.value)
+
+/>
     <main className='container'>
       <input
       className='viewed'
